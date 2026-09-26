@@ -1,0 +1,31 @@
+[build]
+  publish = "."
+  functions = "netlify/functions"
+
+[functions]
+  node_bundler = "esbuild"
+
+[[redirects]]
+  from = "/admin"
+  to = "/admin.html"
+  status = 200
+[[redirects]]
+  from = "/dashboard"
+  to = "/dashboard.html"
+  status = 200
+[[redirects]]
+  from = "/shop"
+  to = "/shop.html"
+  status = 200
+[[redirects]]
+  from = "/cart"
+  to = "/cart.html"
+  status = 200
+[[redirects]]
+  from = "/reviews"
+  to = "/reviews.html"
+  status = 200
+[[redirects]]
+  from = "/contact"
+  to = "/contact.html"
+  status = 200

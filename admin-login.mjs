@@ -1,0 +1,2 @@
+import crypto from "node:crypto";
+export default async request=>{if(request.method!=="POST")return new Response("Method not allowed",{status:405});const{password}=await request.json(),expected=process.env.ADMIN_PASSWORD;if(!expected||typeof password!=="string")return new Response("Unauthorized",{status:401});const a=Buffer.from(password),b=Buffer.from(expected),same=a.length===b.length&&crypto.timingSafeEqual(a,b);if(!same)return new Response("Unauthorized",{status:401});return Response.json({authenticated:true})};
